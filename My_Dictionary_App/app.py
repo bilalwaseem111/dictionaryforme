@@ -2,14 +2,6 @@ import streamlit as st
 import os
 from dictionary import get_word_meaning
 
-# Load CSS correctly
-def load_css():
-    css_file = "style.css"
-    if os.path.exists(css_file):  # Check if file exists
-        with open(css_file, "r") as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    else:
-        st.warning("⚠️ CSS file not found. Using inline styles.")
 
 # Streamlit App
 def main():
