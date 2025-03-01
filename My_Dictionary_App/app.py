@@ -8,13 +8,13 @@ def load_css():
         with open(css_file, "r") as f:
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
     except FileNotFoundError:
-        st.warning("⚠️ CSS file not found! The app will still work but won't be styled.")
+        st.warning("⚠️ CSS file not found. The app will work but without custom styling.")
 
 # Streamlit App
 def main():
     st.set_page_config(page_title="My Dictionary App", page_icon="📖", layout="centered")
 
-    load_css()
+    load_css()  # Load the CSS file
 
     st.markdown("<h1 class='title'>📖 My Global Dictionary</h1>", unsafe_allow_html=True)
 
@@ -33,4 +33,5 @@ def main():
         else:
             st.warning("⚠️ Please enter a valid word.")
 
-   
+if __name__ == "__main__":
+    main()
